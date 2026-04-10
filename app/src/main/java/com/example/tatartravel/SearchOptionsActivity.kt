@@ -7,9 +7,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class FlightsActivity : AppCompatActivity() {
+class SearchOptionsActivity : AppCompatActivity() {
 
-    private lateinit var flights: List<Flight>
+    private lateinit var searchOptions: List<SearchOptions>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,13 +24,13 @@ class FlightsActivity : AppCompatActivity() {
 
         titleText.text = "Найденные рейсы"
 
-        flights = listOf(
-            Flight(fromCity, toCity, date, "08:00", "1200 ₽"),
-            Flight(fromCity, toCity, date, "12:30", "950 ₽"),
-            Flight(fromCity, toCity, date, "18:15", "1100 ₽")
+        searchOptions = listOf(
+            SearchOptions(fromCity, toCity, date, "08:00", "1200 ₽"),
+            SearchOptions(fromCity, toCity, date, "12:30", "950 ₽"),
+            SearchOptions(fromCity, toCity, date, "18:15", "1100 ₽")
         )
 
-        val adapter = FlightAdapter(flights) { selectedFlight ->
+        val adapter = SearchSystemAdapter(searchOptions) { selectedFlight ->
             val intent = Intent(this, BookingActivity::class.java)
             intent.putExtra("fromCity", selectedFlight.fromCity)
             intent.putExtra("toCity", selectedFlight.toCity)

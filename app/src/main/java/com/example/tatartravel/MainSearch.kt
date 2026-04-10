@@ -1,5 +1,6 @@
 package com.example.tatartravel
 
+import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +10,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.Calendar
 
-class MainActivity : AppCompatActivity() {
+class MainSearch : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity() {
             } else if (from.equals(to, ignoreCase = true)) {
                 Toast.makeText(this, "Пункты отправления и прибытия не должны совпадать", Toast.LENGTH_SHORT).show()
             } else {
-                val intent = Intent(this, FlightsActivity::class.java)
+                val intent = Intent(this, SearchOptionsActivity::class.java)
                 intent.putExtra("fromCity", from)
                 intent.putExtra("toCity", to)
                 intent.putExtra("date", flightDate)
@@ -56,6 +57,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("DefaultLocale")
     private fun showDatePicker(dateField: EditText) {
         val calendar = Calendar.getInstance()
         val year = calendar.get(Calendar.YEAR)

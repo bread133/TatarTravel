@@ -1,6 +1,6 @@
 package com.example.tatartravel
 
-data class Flight(
+data class SearchOptions(
     val fromCity: String,
     val toCity: String,
     val date: String,

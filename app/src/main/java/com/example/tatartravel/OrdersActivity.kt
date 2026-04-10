@@ -12,7 +12,7 @@ class OrdersActivity : AppCompatActivity() {
 
     private lateinit var ordersRecyclerView: RecyclerView
     private lateinit var emptyOrdersText: TextView
-    private lateinit var adapter: OrderAdapter
+    private lateinit var adapter: TicketsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +36,7 @@ class OrdersActivity : AppCompatActivity() {
             emptyOrdersText.visibility = TextView.GONE
             ordersRecyclerView.visibility = RecyclerView.VISIBLE
 
-            adapter = OrderAdapter(OrderStorage.orders) { selectedOrder ->
+            adapter = TicketsAdapter(OrderStorage.orders) { selectedOrder ->
                 AlertDialog.Builder(this)
                     .setTitle("Удаление заказа")
                     .setMessage("Удалить выбранное бронирование?")

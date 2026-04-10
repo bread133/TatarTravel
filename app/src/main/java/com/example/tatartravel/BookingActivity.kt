@@ -25,7 +25,7 @@ class BookingActivity : AppCompatActivity() {
         val time = intent.getStringExtra("time") ?: ""
         val price = intent.getStringExtra("price") ?: ""
 
-        val flight = Flight(fromCity, toCity, date, time, price)
+        val searchOptions = SearchOptions(fromCity, toCity, date, time, price)
 
         bookingInfo.text = """
         Маршрут: $fromCity → $toCity
@@ -38,7 +38,7 @@ class BookingActivity : AppCompatActivity() {
         """.trimIndent()
 
         bookButton.setOnClickListener {
-            val added = OrderStorage.addOrder(this, flight)
+            val added = OrderStorage.addOrder(this, searchOptions)
 
             if (added) {
                 Toast.makeText(this, "Бронирование успешно выполнено", Toast.LENGTH_SHORT).show()

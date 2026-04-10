@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class FlightAdapter(
-    private val flights: List<Flight>,
-    private val onItemClick: (Flight) -> Unit
-) : RecyclerView.Adapter<FlightAdapter.FlightViewHolder>() {
+class SearchSystemAdapter(
+    private val searchOptions: List<SearchOptions>,
+    private val onItemClick: (SearchOptions) -> Unit
+) : RecyclerView.Adapter<SearchSystemAdapter.FlightViewHolder>() {
 
     class FlightViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val routeText: TextView = itemView.findViewById(R.id.routeText)
@@ -26,7 +26,7 @@ class FlightAdapter(
 
     @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: FlightViewHolder, position: Int) {
-        val flight = flights[position]
+        val flight = searchOptions[position]
 
         holder.routeText.text = "${flight.fromCity} → ${flight.toCity}"
         holder.dateTimeText.text = "Дата: ${flight.date}   Время: ${flight.time}"
@@ -37,5 +37,5 @@ class FlightAdapter(
         }
     }
 
-    override fun getItemCount(): Int = flights.size
+    override fun getItemCount(): Int = searchOptions.size
 }
