@@ -10,22 +10,22 @@ import androidx.recyclerview.widget.RecyclerView
 class SearchSystemAdapter(
     private val searchOptions: List<SearchOptions>,
     private val onItemClick: (SearchOptions) -> Unit
-) : RecyclerView.Adapter<SearchSystemAdapter.FlightViewHolder>() {
+) : RecyclerView.Adapter<SearchSystemAdapter.SearchOptionsViewHolder>() {
 
-    class FlightViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class SearchOptionsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val routeText: TextView = itemView.findViewById(R.id.routeText)
         val dateTimeText: TextView = itemView.findViewById(R.id.dateTimeText)
         val priceText: TextView = itemView.findViewById(R.id.priceText)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FlightViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchOptionsViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_flight, parent, false)
-        return FlightViewHolder(view)
+        return SearchOptionsViewHolder(view)
     }
 
     @SuppressLint("SetTextI18n")
-    override fun onBindViewHolder(holder: FlightViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: SearchOptionsViewHolder, position: Int) {
         val flight = searchOptions[position]
 
         holder.routeText.text = "${flight.fromCity} → ${flight.toCity}"
