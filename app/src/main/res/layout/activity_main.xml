@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Поиск рейсов"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"/>
+
+    <EditText
+        android:id="@+id/fromCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Откуда" />
+
+    <EditText
+        android:id="@+id/toCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Куда"
+        android:layout_marginTop="12dp"/>
+
+    <EditText
+        android:id="@+id/date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Дата"
+        android:layout_marginTop="12dp"
+        android:focusable="false"
+        android:clickable="true"/>
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Найти рейсы"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+    <Button
+        android:id="@+id/ordersMainButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Мои заказы"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:padding="12dp"/>
+
+</LinearLayout>
